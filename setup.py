@@ -12,27 +12,18 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = "bleak"
-DESCRIPTION = "Bluetooth Low Energy platform Agnostic Klient"
-URL = "https://github.com/hbldh/bleak"
-EMAIL = "henrik.blidh@nedomkull.com"
-AUTHOR = "Henrik Blidh"
+NAME = "bleaktyped"
+DESCRIPTION = "Typing extensions to Bleak"
+URL = "https://github.com/jackjansen/bleaktyped"
+EMAIL = "Jack.Jansen@cwi.nl"
+AUTHOR = "Jack Jansen"
 
 REQUIRED = [
-    "async_timeout>=4.0.1",
-    "typing-extensions>=4.2.0",
-    # Linux reqs
-    'dbus-next;platform_system=="Linux"',
-    # macOS reqs
-    'pyobjc-core;platform_system=="Darwin"',
-    'pyobjc-framework-CoreBluetooth;platform_system=="Darwin"',
-    'pyobjc-framework-libdispatch;platform_system=="Darwin"',
-    # Windows reqs
-    'bleak-winrt>=1.1.1;platform_system=="Windows"',
+    "bleak>=0.22.3",
 ]
 
 here = os.path.abspath(os.path.dirname(__file__))
-with io.open(os.path.join(here, "README.rst"), encoding="utf-8") as f:
+with io.open(os.path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = "\n" + f.read()
 
 # Load the package's __version__.py module as a dictionary.
@@ -83,17 +74,17 @@ setup(
     author=AUTHOR,
     author_email=EMAIL,
     url=URL,
-    packages=find_packages(exclude=("tests", "examples", "docs", "BleakUWPBridge")),
-    entry_points={"console_scripts": ["bleak-lescan=bleak:cli"]},
+    packages=find_packages(exclude=("tests", "examples", "docs")),
+#    entry_points={"console_scripts": ["bleak-lescan=bleak:cli"]},
     install_requires=REQUIRED,
-    test_suite="tests",
+#    test_suite="tests",
     include_package_data=True,
     license="MIT",
     project_urls={
-        "Changelog": "https://github.com/hbldh/bleak/blob/develop/CHANGELOG.rst",
-        "Documentation": "https://bleak.readthedocs.io",
-        "Support": "https://github.com/hbldh/bleak/discussions",
-        "Issues": "https://github.com/hbldh/bleak/issues",
+#        "Changelog": "https://github.com/hbldh/bleak/blob/develop/CHANGELOG.rst",
+#        "Documentation": "https://bleak.readthedocs.io",
+#        "Support": "https://github.com/hbldh/bleak/discussions",
+#        "Issues": "https://github.com/hbldh/bleak/issues",
     },
     classifiers=[
         # Trove classifiers

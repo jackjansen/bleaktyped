@@ -9,8 +9,8 @@ import asyncio
 import logging
 import re
 
-from bleak import BleakScanner
-from bleak.pythonic.client import BleakPythonicClient
+from bleaktyped import BleakScanner
+from bleaktyped import BleakTypedClient
 
 device = sys.argv[1]
 characteristic = sys.argv[2]
@@ -27,7 +27,7 @@ async def run(device, charachteristic):
     if not dev:
         print(f"Device {device} not found")
         return
-    async with BleakPythonicClient(dev) as client:
+    async with BleakTypedClient(dev) as client:
         value = await client.read_gatt_char_typed(characteristic)
     print(value)
 

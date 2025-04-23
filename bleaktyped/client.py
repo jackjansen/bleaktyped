@@ -3,10 +3,10 @@ import uuid
 from bleak import BleakClient
 from bleak.exc import BleakError
 from bleak.backends.characteristic import BleakGATTCharacteristic
-from bleak.pythonic.marshall import BleakGATTMarshaller
+from bleaktyped.marshall import BleakGATTMarshaller
 
 
-class BleakPythonicClient(BleakClient):
+class BleakTypedClient(BleakClient):
     __doc__ = BleakClient.__doc__ + """
     
     This is a subclass of BleakClient, currently with only two methods
